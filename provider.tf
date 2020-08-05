@@ -9,6 +9,11 @@ provider "vault" {
   }
 }
 
+resource "vault_mount" "kv" {
+  path                      = "testme_2"
+  type                      = "kv-v2"
+}
+
 terraform {
   backend "remote" {
     hostname = "app.terraform.io"
